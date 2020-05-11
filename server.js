@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
 
 
 /* USE CORS */
-// app.use(cors());
+app.use(cors());
 
 /* LISTEN TO PORT */
 app.listen(port, () => console.log(`Listening on port ${port}`));
