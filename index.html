@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>hey</title>
+	<link rel="shortcut icon" href="">
+</head>
+
+<body>
+	<h1>NodeJs ForumCs</h1>
+	<script>
+		// var ip = "https://master.d55xp3k26fwvq.amplifyapp.com"
+
+		fetch("/api/forum", {
+			headers: {
+				'Content-Type': 'application/json',
+				"Accept": "application/json; odata=verbose"
+			}
+		})
+			.then(response => response.json())
+			.then(data => {
+				console.log(data)
+			});
+	</script>
+</body>
+
+</html>
