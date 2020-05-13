@@ -2,7 +2,8 @@ const cors = require("cors");
 const express = require('express');
 const mysql = require("mysql");
 
-const port = process.env.PORT || 80;
+/* Herpku already sets a port */
+// const port = process.env.PORT || 80;
 
 var app = express()
 
@@ -13,10 +14,36 @@ app.get('/', function (req, res) {
 
 
 /* USE CORS */
-app.use(cors());
+// app.use(cors());
+app.use(cors({origin: '*'}));
 
 /* LISTEN TO PORT */
 app.listen(port, () => console.log(`Listening on port ${port}`));
+
+// /* HEADERS */
+
+// // Website you wish to allow to connect
+// // Add headers
+// app.use(function (req, res, next) {
+
+// 	// Website you wish to allow to connect
+// 	res.setHeader('Access-Control-Allow-Origin', 'https://forum-pfc-client.herokuapp.com/');
+// 	res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+// 	res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5000');
+
+// 	// Request methods you wish to allow
+// 	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+// 	// Request headers you wish to allow
+// 	res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+// 	// Set to true if you need the website to include cookies in the requests sent
+// 	// to the API (e.g. in case you use sessions)
+// 	res.setHeader('Access-Control-Allow-Credentials', true);
+
+// 	// Pass to next layer of middleware
+// 	next();
+// });
 
 
 /* CONNECTION POOL */
