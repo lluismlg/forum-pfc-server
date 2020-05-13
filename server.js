@@ -86,7 +86,7 @@ app.get("/api/vote", (req, res) => {
 	});
 });
 
-/* UPLOAD TEXT POST */
+/* UPLOAD TEXT */
 app.get("/api/uploadText", (req, res) => {
 	const { postDate, postType, postAuthor, postTitle, postContent } = req.query;
 	con.query(`INSERT INTO posts (postDate, postType, postAuthor, postTitle, postContent) VALUES ('${postDate}','${postType}', '${postAuthor}','${postTitle}','${postContent}')`, (err, results) => {
@@ -97,7 +97,7 @@ app.get("/api/uploadText", (req, res) => {
 		}
 	});
 });
-/* UPLOAD IMAGE POST */
+/* UPLOAD IMAGE */
 app.get("/api/uploadImage", (req, res) => {
 	const { postDate, postType, postAuthor, postTitle, postImage } = req.query;
 	con.query(`INSERT INTO posts (postDate, postType, postAuthor, postTitle, postImage) VALUES ('${postDate}','${postType}', '${postAuthor}','${postTitle}','${postImage}')`, (err, results) => {
@@ -108,7 +108,7 @@ app.get("/api/uploadImage", (req, res) => {
 		}
 	});
 });
-/* UPLOAD LINK POST */
+/* UPLOAD LINK */
 app.get("/api/uploadLink", (req, res) => {
 	const { postDate, postType, postAuthor, postTitle, postContent } = req.query;
 	con.query(`INSERT INTO posts (postDate, postType, postAuthor, postTitle, postContent) VALUES ('${postDate}','${postType}', '${postAuthor}','${postTitle}','${postContent}')`, (err, results) => {
