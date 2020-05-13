@@ -3,7 +3,7 @@ const express = require('express');
 const mysql = require("mysql");
 
 /* Herpku already sets a port */
-// const port = process.env.PORT || 80;
+const port = process.env.PORT || 80;
 
 var app = express()
 
