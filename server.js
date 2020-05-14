@@ -32,7 +32,7 @@ const con = mysql.createPool({
 
 /* GET POSTS */
 app.get("/api/forum", (req, res) => {
-	con.query(`SELECT postId, DATE_FORMAT(postDate, "%d-%m-%Y") as postDate,postType,postAuthor,postTitle,postImg,postContent,postTopic FROM posts ORDER BY postId DESC`, (err, results) => {
+	con.query(`SELECT postId, DATE_FORMAT(postDate, "%d-%m-%Y") as postDate,postType,postAuthor,postTitle,postImage,postContent,postTopic FROM posts ORDER BY postId DESC`, (err, results) => {
 		if (err) {
 			return res.send(err);
 		} else {
@@ -44,7 +44,7 @@ app.get("/api/forum", (req, res) => {
 /* GET POST BY ID */
 app.get("/api/post", (req, res) => {
 	const { postId } = req.query;
-	con.query(`SELECT postId, DATE_FORMAT(postDate, "%d-%m-%Y") as postDate, postAuthor, postLikes, postTitle, postImg, postContent, postTopic FROM posts WHERE postId=${postId}`, (err, results) => {
+	con.query(`SELECT postId, DATE_FORMAT(postDate, "%d-%m-%Y") as postDate, postAuthor, postLikes, postTitle, postImage, postContent, postTopic FROM posts WHERE postId=${postId}`, (err, results) => {
 		if (err) {
 			return res.send(err);
 		} else {
