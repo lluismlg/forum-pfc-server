@@ -123,7 +123,7 @@ app.get("/api/uploadLink", (req, res) => {
 /* SEARCH POSTS BY TITLE */
 app.get("/api/searchTitle", (req, res) => {
 	const { searchTitle } = req.query;
-	con.query(`SELECT postId, DATE_FORMAT(postDate, "%d-%m-%Y") as postDate, postAuthor, postLikes, postTitle, postImage, postContent, postTopic FROM posts WHERE postTitle LIKE ${searchTitle}`, (err, results) => {
+	con.query(`SELECT postId, DATE_FORMAT(postDate, "%d-%m-%Y") as postDate, postAuthor, postLikes, postTitle, postImage, postContent, postTopic FROM posts WHERE postTitle LIKE "${searchTitle}"`, (err, results) => {
 		if (err) {
 			return res.send(err);
 		} else {
